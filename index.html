@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Off-Record - Stories That Matter</title>
-    <meta name="description" content="Uncovering the narratives behind the headlines. Where journalism meets storytelling.">
+    <title>Off-Record - Untold Stories</title>
+    <meta name="description" content="Bringing untold stories to life. Amplifying the voices of the underrepresented, one episode at a time.">
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,330 +17,391 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Preloader -->
-    <div id="preloader" class="preloader">
-        <div class="preloader-logo">
-            <svg class="logo-icon" width="96" height="96" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
-                <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
-            </svg>
-        </div>
-        <p class="preloader-text">Loading...</p>
-    </div>
-
     <!-- Navbar -->
     <nav class="navbar">
         <div class="navbar-container">
-            <div class="navbar-content">
-                <!-- Logo -->
-                <div class="navbar-logo">
-                    <a href="#home" class="logo-link">
-                        <div class="logo-glow"></div>
-                        <svg class="logo-icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
-                            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
-                        </svg>
-                        <span class="logo-text">Off<span class="logo-dash">-</span>Record</span>
-                    </a>
-                </div>
-
-                <!-- Desktop Navigation -->
-                <div class="nav-links">
-                    <a href="#home" class="nav-link">Home</a>
-                    <a href="#stories" class="nav-link">Stories</a>
-                    <a href="#categories" class="nav-link">Categories</a>
-                    <a href="#about" class="nav-link">About</a>
-                    <a href="#subscribe" class="btn-subscribe">Subscribe</a>
-                </div>
-
-                <!-- Mobile Menu Button -->
-                <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">
-                    <svg class="menu-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <line x1="3" y1="12" x2="21" y2="12"></line>
-                        <line x1="3" y1="6" x2="21" y2="6"></line>
-                        <line x1="3" y1="18" x2="21" y2="18"></line>
-                    </svg>
-                    <svg class="close-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: none;">
-                        <line x1="18" y1="6" x2="6" y2="18"></line>
-                        <line x1="6" y1="6" x2="18" y2="18"></line>
-                    </svg>
-                </button>
+            <a href="#home" class="navbar-logo">
+                <div class="logo-glow"></div>
+                <i data-lucide="book-open" class="logo-icon"></i>
+                <span class="logo-text">Off<span class="text-primary">-</span>Record</span>
+            </a>
+            
+            <!-- Desktop Navigation -->
+            <div class="nav-links">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#episodes" class="nav-link">Episodes</a>
+                <a href="#merch" class="nav-link">Merch</a>
+                <a href="#support" class="btn-support">Support Us</a>
             </div>
+            
+            <!-- Mobile Menu Button -->
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i data-lucide="menu" class="menu-icon"></i>
+                <i data-lucide="x" class="close-icon" style="display: none;"></i>
+            </button>
         </div>
-
+        
         <!-- Mobile Navigation -->
         <div class="mobile-nav" id="mobileNav">
-            <div class="mobile-nav-content">
-                <a href="#home" class="mobile-nav-link">Home</a>
-                <a href="#stories" class="mobile-nav-link">Stories</a>
-                <a href="#categories" class="mobile-nav-link">Categories</a>
-                <a href="#about" class="mobile-nav-link">About</a>
-                <a href="#subscribe" class="btn-subscribe-mobile">Subscribe</a>
-            </div>
+            <a href="#home" class="mobile-nav-link">Home</a>
+            <a href="#episodes" class="mobile-nav-link">Episodes</a>
+            <a href="#merch" class="mobile-nav-link">Merch</a>
+            <a href="#support" class="mobile-nav-link btn-support-mobile">Support Us</a>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-bg"></div>
-        <div class="hero-pattern"></div>
-        
-        <div class="hero-container">
-            <div class="hero-grid">
-                <!-- Left Column -->
-                <div class="hero-content">
-                    <div class="hero-meta">
-                        <span class="badge badge-secondary">
+    <!-- HOME PAGE -->
+    <div id="page-home" class="page">
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="hero-bg"></div>
+            <div class="hero-pattern"></div>
+            
+            <div class="container">
+                <div class="hero-grid">
+                    <!-- Left Column -->
+                    <div class="hero-content">
+                        <div class="badge badge-secondary">
                             <i data-lucide="trending-up" class="badge-icon"></i>
-                            Featured Story
-                        </span>
-                        <div class="hero-date">
-                            <i data-lucide="calendar" class="date-icon"></i>
-                            <span>Jan 15, 2025</span>
+                            <span>Featured Episodes</span>
                         </div>
-                    </div>
-                    
-                    <h1 class="hero-title">
-                        Stories That
-                        <span class="hero-title-highlight">
-                            Matter
-                            <span class="title-underline"></span>
-                        </span>
-                    </h1>
-                    
-                    <p class="hero-description">
-                        Uncovering the narratives behind the headlines. Where journalism meets storytelling.
-                    </p>
-                    
-                    <div class="hero-info">
-                        <div class="info-item">
+                        
+                        <h1 class="hero-title">
+                            Untold Stories.
+                            <span class="hero-title-highlight">
+                                Unheard Voices.
+                                <span class="title-underline"></span>
+                            </span>
+                        </h1>
+                        
+                        <p class="hero-description">
+                            We bring the stories of the underrepresented to life. Every individual deserves to be heard.
+                        </p>
+                        
+                        <div class="hero-info">
                             <i data-lucide="book-open" class="info-icon"></i>
-                            <span class="info-text">8 min read</span>
+                            <span class="info-text">Real stories. Real people. Real impact.</span>
                         </div>
-                        <div class="info-dot"></div>
-                        <span class="info-text">Investigative</span>
+                        
+                        <div class="hero-buttons">
+                            <a href="#episodes" class="btn-primary">
+                                Explore Episodes
+                                <i data-lucide="arrow-right" class="btn-icon"></i>
+                            </a>
+                            <a href="#support" class="btn-outline">
+                                Support Our Mission
+                                <i data-lucide="heart" class="btn-icon"></i>
+                            </a>
+                        </div>
                     </div>
                     
-                    <div class="hero-buttons">
-                        <a href="#stories" class="btn-primary">
-                            Read Featured Story
-                            <i data-lucide="arrow-right" class="btn-icon"></i>
-                        </a>
-                        <a href="#stories" class="btn-outline">
-                            Browse All Stories
-                            <i data-lucide="arrow-right" class="btn-icon"></i>
-                        </a>
-                    </div>
-                </div>
-                
-                <!-- Right Column -->
-                <div class="hero-image-wrapper">
-                    <div class="hero-image-glow"></div>
-                    <div class="hero-image-card">
-                        <div class="hero-image-container">
-                            <img src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=800&h=1000&fit=crop" alt="Featured Story" class="hero-image">
-                            <div class="hero-image-overlay"></div>
+                    <!-- Right Column -->
+                    <div class="hero-image-wrapper">
+                        <div class="hero-image-glow"></div>
+                        <div class="hero-image-card">
+                            <img src="https://images.unsplash.com/photo-1504711331083-9c895941bf81?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1170" alt="Featured Story" class="hero-image">
+                            <div class="hero-overlay"></div>
                             <div class="hero-image-text">
-                                <span class="badge badge-primary">Breaking</span>
-                                <h3 class="image-title">The Untold Story of Innovation</h3>
-                                <p class="image-description">Exploring the hidden narratives that shape our world</p>
+                                <span class="badge badge-primary">Breaking Story</span>
+                                <h3 class="image-title">The Power of One Voice</h3>
+                                <p class="image-description">How individual stories create collective change</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Stories Section -->
-    <section id="stories" class="stories">
-        <div class="section-container">
-            <div class="stories-header">
-                <div>
-                    <span class="badge badge-outline">Latest Stories</span>
-                    <h2 class="section-title">
-                        Recent <span class="text-primary">Investigations</span>
-                    </h2>
-                </div>
-                <a href="#" class="btn-view-all">
-                    View All Stories
-                    <i data-lucide="arrow-right" class="btn-icon"></i>
-                </a>
-            </div>
-
-            <div class="stories-grid" id="storiesGrid">
-                <!-- Stories will be inserted here by JavaScript -->
-            </div>
-
-            <div class="stories-footer">
-                <a href="#" class="btn-view-all-mobile">
-                    View All Stories
-                    <i data-lucide="arrow-right" class="btn-icon"></i>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Categories Section -->
-    <section id="categories" class="categories">
-        <div class="section-container">
-            <div class="categories-header">
-                <span class="badge badge-outline">Explore Topics</span>
-                <h2 class="section-title">
-                    Story <span class="text-primary">Categories</span>
-                </h2>
-                <p class="section-description">
-                    Dive deep into the topics that matter most, from investigative journalism to cultural narratives
-                </p>
-            </div>
-
-            <div class="categories-grid" id="categoriesGrid">
-                <!-- Categories will be inserted here by JavaScript -->
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="about">
-        <div class="section-container">
-            <div class="about-grid">
-                <div class="about-image-wrapper">
-                    <div class="about-image-glow"></div>
-                    <img src="https://images.unsplash.com/photo-1552581234-26160f608093?w=700&h=800&fit=crop" alt="Our newsroom" class="about-image">
+        <!-- Featured Episodes -->
+        <section class="featured-section">
+            <div class="container">
+                <div class="section-header">
+                    <div>
+                        <span class="badge badge-outline">Latest Episodes</span>
+                        <h2 class="section-title">
+                            Recent <span class="text-primary">Stories</span>
+                        </h2>
+                    </div>
+                    <a href="#episodes" class="btn-view-all">
+                        View All
+                        <i data-lucide="arrow-right" class="btn-icon"></i>
+                    </a>
                 </div>
                 
-                <div class="about-content">
-                    <span class="badge badge-outline">
-                        <i data-lucide="users" class="badge-icon"></i>
-                        About Us
-                    </span>
-                    
-                    <h2 class="section-title">
-                        Journalism That
-                        <span class="text-primary">Tells the Truth</span>
-                    </h2>
-                    
-                    <p class="about-text">
-                        Off-Record is a platform dedicated to investigative journalism and narrative storytelling. 
-                        We believe in the power of well-researched, deeply reported stories to create understanding 
-                        and inspire change.
-                    </p>
-                    
-                    <p class="about-text">
-                        Our team of experienced journalists and storytellers work tirelessly to uncover the truth, 
-                        amplify marginalized voices, and hold power to account.
-                    </p>
-                    
-                    <div class="about-button">
-                        <a href="#" class="btn-primary">
-                            Meet Our Team
-                            <i data-lucide="arrow-right" class="btn-icon"></i>
-                        </a>
-                    </div>
+                <div class="episodes-grid" id="featuredEpisodesGrid"></div>
+                
+                <div class="section-footer">
+                    <a href="#episodes" class="btn-view-all-mobile">
+                        View All Episodes
+                        <i data-lucide="arrow-right" class="btn-icon"></i>
+                    </a>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Newsletter Section -->
-    <section id="subscribe" class="newsletter">
-        <div class="newsletter-container">
-            <div class="newsletter-card">
-                <h2 class="newsletter-title">
-                    Stay <span class="text-primary">In The Loop</span>
+        <!-- Mission Section -->
+        <section class="mission-section">
+            <div class="container-narrow">
+                <span class="badge badge-outline">
+                    <i data-lucide="heart" class="badge-icon"></i>
+                    Our Mission
+                </span>
+                
+                <h2 class="section-title">
+                    Every Voice <span class="text-primary">Matters</span>
                 </h2>
-                <p class="newsletter-description">
-                    Get our best stories delivered straight to your inbox. Subscribe to our newsletter for 
-                    exclusive content, investigative reports, and insider perspectives.
+                
+                <p class="mission-text">
+                    We're not a journaling site. We bring untold stories to life—focusing on the voices of the underrepresented, 
+                    the stories that too often go unheard. Each person is featured in their own episode, sharing their journey, 
+                    struggles, and triumphs.
                 </p>
-                <form class="newsletter-form" id="newsletterForm">
-                    <input type="email" placeholder="Enter your email" class="newsletter-input" required>
-                    <button type="submit" class="btn-primary">Subscribe</button>
-                </form>
-                <p class="newsletter-disclaimer">
-                    No spam. Unsubscribe anytime.
-                </p>
+                
+                <div class="mission-buttons">
+                    <a href="#episodes" class="btn-primary">
+                        Discover Stories
+                        <i data-lucide="arrow-right" class="btn-icon"></i>
+                    </a>
+                    <a href="#merch" class="btn-outline">
+                        Shop Merch
+                    </a>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-container">
-            <div class="footer-grid">
-                <!-- Brand Column -->
-                <div class="footer-brand">
-                    <div class="footer-logo">
-                        <svg class="logo-icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
-                            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
-                        </svg>
-                        <span class="logo-text">Off-Record</span>
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-brand">
+                        <div class="footer-logo">
+                            <i data-lucide="book-open" class="logo-icon"></i>
+                            <span class="logo-text">Off-Record</span>
+                        </div>
+                        <p class="footer-description">
+                            Amplifying the voices of the underrepresented, one story at a time.
+                        </p>
                     </div>
-                    <p class="footer-description">
-                        Investigative journalism and narrative storytelling that uncovers truth and inspires change.
+                    
+                    <div class="footer-links">
+                        <h3 class="footer-heading">Quick Links</h3>
+                        <a href="#episodes" class="footer-link">Episodes</a>
+                        <a href="#merch" class="footer-link">Merch</a>
+                        <a href="#support" class="footer-link">Support</a>
+                    </div>
+                    
+                    <div class="footer-contact">
+                        <h3 class="footer-heading">Contact</h3>
+                        <p class="footer-text">pkireri@gmail.com</p>
+                        <p class="footer-text">+1 (404) 717-5716</p>
+                        <p class="footer-text">Atlanta, GA</p>
+                    </div>
+                </div>
+                
+                <div class="footer-bottom">
+                    <p class="footer-copyright">© 2025 Pravin Ireri. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- EPISODES PAGE -->
+    <div id="page-episodes" class="page" style="display: none;">
+        <section class="page-header">
+            <div class="container">
+                <div class="page-header-content">
+                    <span class="badge badge-outline">All Episodes</span>
+                    <h1 class="page-title">
+                        Untold <span class="text-primary">Stories</span>
+                    </h1>
+                    <p class="page-description">
+                        Each episode features an individual sharing their journey, struggles, and triumphs. 
+                        These are the voices that deserve to be heard.
                     </p>
-                    <div class="footer-social">
-                        <a href="#" class="social-link" aria-label="Twitter">
-                            <i data-lucide="twitter"></i>
-                        </a>
-                        <a href="#" class="social-link" aria-label="Facebook">
-                            <i data-lucide="facebook"></i>
-                        </a>
-                        <a href="#" class="social-link" aria-label="Instagram">
-                            <i data-lucide="instagram"></i>
-                        </a>
-                        <a href="#" class="social-link" aria-label="LinkedIn">
-                            <i data-lucide="linkedin"></i>
-                        </a>
+                </div>
+                
+                <div class="search-bar">
+                    <i data-lucide="search" class="search-icon"></i>
+                    <input type="text" placeholder="Search episodes..." class="search-input" id="searchInput">
+                </div>
+            </div>
+        </section>
+
+        <section class="episodes-section">
+            <div class="container">
+                <div class="episodes-grid" id="allEpisodesGrid"></div>
+            </div>
+        </section>
+    </div>
+
+    <!-- EPISODE DETAIL PAGE -->
+    <div id="page-episode-detail" class="page" style="display: none;">
+        <section class="episode-hero">
+            <div class="container">
+                <a href="#episodes" class="back-link">
+                    <i data-lucide="arrow-left" class="back-icon"></i>
+                    Back to Episodes
+                </a>
+                
+                <div class="episode-detail-grid" id="episodeDetailContent"></div>
+            </div>
+        </section>
+
+        <section class="story-section">
+            <div class="container-narrow">
+                <h2 class="section-title">Their Story</h2>
+                <div class="story-content" id="storyContent"></div>
+            </div>
+        </section>
+
+        <section class="support-section">
+            <div class="container-narrow">
+                <div class="support-header">
+                    <h2 class="section-title" id="supportTitle">Support</h2>
+                    <p class="support-description">
+                        Your support helps continue their important work in the community
+                    </p>
+                </div>
+                
+                <div class="support-links-grid" id="supportLinksGrid"></div>
+                
+                <div class="support-cta">
+                    <i data-lucide="heart" class="support-icon"></i>
+                    <h3 class="support-cta-title">Every Contribution Matters</h3>
+                    <p class="support-cta-text" id="supportCtaText">
+                        100% of donations go directly to supporting their community work
+                    </p>
+                    <button class="btn-primary">Make a Donation</button>
+                </div>
+            </div>
+        </section>
+        
+    </div>
+
+    <!-- MERCH PAGE -->
+    <div id="page-merch" class="page" style="display: none;">
+        <section class="page-header">
+            <div class="container-center">
+                <span class="badge badge-outline">Official Merch</span>
+                <h1 class="page-title">
+                    Support Through <span class="text-primary">Style</span>
+                </h1>
+                <p class="page-description">
+                    Every purchase directly supports our mission to amplify underrepresented voices. 
+                    Wear your values proudly.
+                </p>
+            </div>
+        </section>
+
+        <section class="impact-banner">
+            <div class="container">
+                <i data-lucide="heart" class="impact-icon"></i>
+                <p class="impact-text">
+                    100% of profits fund storytelling projects and support featured individuals
+                </p>
+            </div>
+        </section>
+
+        <section class="products-section">
+            <div class="container">
+                <div class="products-grid" id="productsGrid"></div>
+            </div>
+        </section>
+
+        <section class="impact-section">
+            <div class="container-narrow">
+                <h2 class="section-title">
+                    Your Purchase <span class="text-primary">Makes an Impact</span>
+                </h2>
+                <p class="impact-description">
+                    Every item you buy helps us create more episodes, support featured individuals, 
+                    and continue amplifying voices that deserve to be heard.
+                </p>
+                
+                <div class="impact-grid">
+                    <div class="impact-card">
+                        <div class="impact-icon-wrapper">
+                            <i data-lucide="heart" class="impact-card-icon"></i>
+                        </div>
+                        <h3 class="impact-card-title">Direct Support</h3>
+                        <p class="impact-card-text">
+                            Profits go directly to our featured individuals
+                        </p>
+                    </div>
+                    
+                    <div class="impact-card">
+                        <div class="impact-icon-wrapper">
+                            <i data-lucide="shopping-cart" class="impact-card-icon"></i>
+                        </div>
+                        <h3 class="impact-card-title">Quality Products</h3>
+                        <p class="impact-card-text">
+                            Sustainably sourced, ethically made merchandise
+                        </p>
+                    </div>
+                    
+                    <div class="impact-card">
+                        <div class="impact-icon-wrapper">
+                            <i data-lucide="heart" class="impact-card-icon"></i>
+                        </div>
+                        <h3 class="impact-card-title">Community Building</h3>
+                        <p class="impact-card-text">
+                            Join a movement of supporters amplifying voices
+                        </p>
                     </div>
                 </div>
-
-                <!-- Quick Links -->
-                <div class="footer-links">
-                    <h3 class="footer-heading">Quick Links</h3>
-                    <ul class="footer-list">
-                        <li><a href="#stories" class="footer-link">Stories</a></li>
-                        <li><a href="#categories" class="footer-link">Categories</a></li>
-                        <li><a href="#about" class="footer-link">About Us</a></li>
-                        <li><a href="#subscribe" class="footer-link">Newsletter</a></li>
-                    </ul>
-                </div>
-
-                <!-- Contact -->
-                <div class="footer-contact">
-                    <h3 class="footer-heading">Contact</h3>
-                    <ul class="footer-list">
-                        <li class="contact-item">
-                            <i data-lucide="mail" class="contact-icon"></i>
-                            <span>hello@offrecord.com</span>
-                        </li>
-                        <li class="contact-item">
-                            <i data-lucide="phone" class="contact-icon"></i>
-                            <span>+1 (555) 123-4567</span>
-                        </li>
-                        <li class="contact-item">
-                            <i data-lucide="map-pin" class="contact-icon"></i>
-                            <span>New York, NY</span>
-                        </li>
-                    </ul>
-                </div>
             </div>
+        </section>  
+    </div>
 
-            <div class="footer-bottom">
-                <p class="footer-copyright">
-                    © 2025 Off-Record. All rights reserved.
+    <!-- SUPPORT PAGE -->
+    <div id="page-support" class="page" style="display: none;">
+        <section class="support-page-section">
+            <div class="container-narrow">
+                <span class="badge badge-outline">
+                    <i data-lucide="heart" class="badge-icon"></i>
+                    Support Our Work
+                </span>
+                
+                <h1 class="page-title">
+                    Help Us Amplify <span class="text-primary">Unheard Voices</span>
+                </h1>
+                
+                <p class="page-description">
+                    Your support enables us to continue producing episodes, supporting the individuals we feature, 
+                    and bringing untold stories to the world.
                 </p>
-                <div class="footer-legal">
-                    <a href="#" class="footer-link">Privacy Policy</a>
-                    <span class="footer-separator">•</span>
-                    <a href="#" class="footer-link">Terms of Service</a>
-                    <span class="footer-separator">•</span>
-                    <a href="#" class="footer-link">Ethics Policy</a>
+                
+                <div class="support-options">
+                    <div class="support-option-card">
+                        <i data-lucide="dollar-sign" class="support-option-icon"></i>
+                        <h3 class="support-option-title">Make a Donation</h3>
+                        <p class="support-option-text">
+                            Direct financial support helps us produce more episodes and support featured individuals
+                        </p>
+                        <button class="btn-primary">Donate Now</button>
+                    </div>
+                    
+                    <div class="support-option-card">
+                        <i data-lucide="shopping-bag" class="support-option-icon"></i>
+                        <h3 class="support-option-title">Purchase Merch</h3>
+                        <p class="support-option-text">
+                            100% of merch profits go directly to supporting our mission and featured individuals
+                        </p>
+                        <a href="#merch" class="btn-outline">Shop Merch</a>
+                    </div>
+                    
+                    <div class="support-option-card">
+                        <i data-lucide="share-2" class="support-option-icon"></i>
+                        <h3 class="support-option-title">Share Stories</h3>
+                        <p class="support-option-text">
+                            Help amplify these voices by sharing episodes with your community
+                        </p>
+                        <button class="btn-outline">Share</button>
+                    </div>
                 </div>
             </div>
-        </div>
-    </footer>
+        </section>
+    </div>
 
     <script src="script.js"></script>
 </body>
