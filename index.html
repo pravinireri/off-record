@@ -11,41 +11,45 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
     
-    <!-- Lucide Icons -->
-    <script src="https://unpkg.com/lucide@latest"></script>
-    
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <!-- Navbar -->
     <nav class="navbar">
         <div class="navbar-container">
-            <a href="#home" class="navbar-logo">
+            <a href="#home" class="navbar-logo" onclick="navigateToPage(event, 'home')">
                 <div class="logo-glow"></div>
-                <i data-lucide="book-open" class="logo-icon"></i>
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="logo-icon">
+                    <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/>
+                </svg>
                 <span class="logo-text">Off<span class="text-primary">-</span>Record</span>
             </a>
             
             <!-- Desktop Navigation -->
             <div class="nav-links">
-                <a href="#home" class="nav-link">Home</a>
-                <a href="#episodes" class="nav-link">Episodes</a>
-                <a href="#merch" class="nav-link">Merch</a>
+                <a href="#home" class="nav-link" onclick="navigateToPage(event, 'home')">Home</a>
+                <a href="#episodes" class="nav-link" onclick="navigateToPage(event, 'episodes')">Episodes</a>
                 <a href="#support" class="btn-support">Support Us</a>
             </div>
             
             <!-- Mobile Menu Button -->
-            <button class="mobile-menu-btn" id="mobileMenuBtn">
-                <i data-lucide="menu" class="menu-icon"></i>
-                <i data-lucide="x" class="close-icon" style="display: none;"></i>
+            <button class="mobile-menu-btn" id="mobileMenuBtn" onclick="toggleMobileMenu()">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="menu-icon">
+                    <line x1="4" x2="20" y1="12" y2="12"/>
+                    <line x1="4" x2="20" y1="6" y2="6"/>
+                    <line x1="4" x2="20" y1="18" y2="18"/>
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="close-icon" style="display: none;">
+                    <path d="M18 6 6 18"/>
+                    <path d="m6 6 12 12"/>
+                </svg>
             </button>
         </div>
         
         <!-- Mobile Navigation -->
         <div class="mobile-nav" id="mobileNav">
-            <a href="#home" class="mobile-nav-link">Home</a>
-            <a href="#episodes" class="mobile-nav-link">Episodes</a>
-            <a href="#merch" class="mobile-nav-link">Merch</a>
+            <a href="#home" class="mobile-nav-link" onclick="navigateToPage(event, 'home')">Home</a>
+            <a href="#episodes" class="mobile-nav-link" onclick="navigateToPage(event, 'episodes')">Episodes</a>
             <a href="#support" class="mobile-nav-link btn-support-mobile">Support Us</a>
         </div>
     </nav>
@@ -62,7 +66,10 @@
                     <!-- Left Column -->
                     <div class="hero-content">
                         <div class="badge badge-secondary">
-                            <i data-lucide="trending-up" class="badge-icon"></i>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="badge-icon">
+                                <polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/>
+                                <polyline points="16 7 22 7 22 13"/>
+                            </svg>
                             <span>Featured Episodes</span>
                         </div>
                         
@@ -79,18 +86,25 @@
                         </p>
                         
                         <div class="hero-info">
-                            <i data-lucide="book-open" class="info-icon"></i>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="info-icon">
+                                <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/>
+                            </svg>
                             <span class="info-text">Real stories. Real people. Real impact.</span>
                         </div>
                         
                         <div class="hero-buttons">
-                            <a href="#episodes" class="btn-primary">
+                            <a href="#episodes" class="btn-primary" onclick="navigateToPage(event, 'episodes')">
                                 Explore Episodes
-                                <i data-lucide="arrow-right" class="btn-icon"></i>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="btn-icon">
+                                    <path d="M5 12h14"/>
+                                    <path d="m12 5 7 7-7 7"/>
+                                </svg>
                             </a>
                             <a href="#support" class="btn-outline">
                                 Support Our Mission
-                                <i data-lucide="heart" class="btn-icon"></i>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="btn-icon">
+                                    <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
+                                </svg>
                             </a>
                         </div>
                     </div>
@@ -99,7 +113,7 @@
                     <div class="hero-image-wrapper">
                         <div class="hero-image-glow"></div>
                         <div class="hero-image-card">
-                            <img src="https://images.unsplash.com/photo-1504711331083-9c895941bf81?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1170" alt="Featured Story" class="hero-image">
+                            <img src="https://images.unsplash.com/photo-1504711331083-9c895941bf81?ixlib=rb-4.1.0&auto=format&fit=crop&q=80&w=1170" alt="Featured Story" class="hero-image">
                             <div class="hero-overlay"></div>
                             <div class="hero-image-text">
                                 <span class="badge badge-primary">Breaking Story</span>
@@ -122,18 +136,24 @@
                             Recent <span class="text-primary">Stories</span>
                         </h2>
                     </div>
-                    <a href="#episodes" class="btn-view-all">
+                    <a href="#episodes" class="btn-view-all" onclick="navigateToPage(event, 'episodes')">
                         View All
-                        <i data-lucide="arrow-right" class="btn-icon"></i>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="btn-icon">
+                            <path d="M5 12h14"/>
+                            <path d="m12 5 7 7-7 7"/>
+                        </svg>
                     </a>
                 </div>
                 
                 <div class="episodes-grid" id="featuredEpisodesGrid"></div>
                 
                 <div class="section-footer">
-                    <a href="#episodes" class="btn-view-all-mobile">
+                    <a href="#episodes" class="btn-view-all-mobile" onclick="navigateToPage(event, 'episodes')">
                         View All Episodes
-                        <i data-lucide="arrow-right" class="btn-icon"></i>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="btn-icon">
+                            <path d="M5 12h14"/>
+                            <path d="m12 5 7 7-7 7"/>
+                        </svg>
                     </a>
                 </div>
             </div>
@@ -143,7 +163,9 @@
         <section class="mission-section">
             <div class="container-narrow">
                 <span class="badge badge-outline">
-                    <i data-lucide="heart" class="badge-icon"></i>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="badge-icon">
+                        <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
+                    </svg>
                     Our Mission
                 </span>
                 
@@ -158,12 +180,12 @@
                 </p>
                 
                 <div class="mission-buttons">
-                    <a href="#episodes" class="btn-primary">
+                    <a href="#episodes" class="btn-primary" onclick="navigateToPage(event, 'episodes')">
                         Discover Stories
-                        <i data-lucide="arrow-right" class="btn-icon"></i>
-                    </a>
-                    <a href="#merch" class="btn-outline">
-                        Shop Merch
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="btn-icon">
+                            <path d="M5 12h14"/>
+                            <path d="m12 5 7 7-7 7"/>
+                        </svg>
                     </a>
                 </div>
             </div>
@@ -175,7 +197,9 @@
                 <div class="footer-grid">
                     <div class="footer-brand">
                         <div class="footer-logo">
-                            <i data-lucide="book-open" class="logo-icon"></i>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="logo-icon">
+                                <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/>
+                            </svg>
                             <span class="logo-text">Off-Record</span>
                         </div>
                         <p class="footer-description">
@@ -185,8 +209,7 @@
                     
                     <div class="footer-links">
                         <h3 class="footer-heading">Quick Links</h3>
-                        <a href="#episodes" class="footer-link">Episodes</a>
-                        <a href="#merch" class="footer-link">Merch</a>
+                        <a href="#episodes" class="footer-link" onclick="navigateToPage(event, 'episodes')">Episodes</a>
                         <a href="#support" class="footer-link">Support</a>
                     </div>
                     
@@ -221,8 +244,11 @@
                 </div>
                 
                 <div class="search-bar">
-                    <i data-lucide="search" class="search-icon"></i>
-                    <input type="text" placeholder="Search episodes..." class="search-input" id="searchInput">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="search-icon">
+                        <circle cx="11" cy="11" r="8"/>
+                        <path d="m21 21-4.3-4.3"/>
+                    </svg>
+                    <input type="text" placeholder="Search episodes..." class="search-input" id="searchInput" oninput="filterEpisodes()">
                 </div>
             </div>
         </section>
@@ -230,16 +256,57 @@
         <section class="episodes-section">
             <div class="container">
                 <div class="episodes-grid" id="allEpisodesGrid"></div>
+                <div id="noResults" class="no-results" style="display: none;">
+                    <p class="text-xl text-muted-foreground">No episodes found matching your search.</p>
+                </div>
             </div>
         </section>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-brand">
+                        <div class="footer-logo">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="logo-icon">
+                                <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/>
+                            </svg>
+                            <span class="logo-text">Off-Record</span>
+                        </div>
+                        <p class="footer-description">
+                            Amplifying the voices of the underrepresented, one story at a time.
+                        </p>
+                    </div>
+                    
+                    <div class="footer-links">
+                        <h3 class="footer-heading">Quick Links</h3>
+                        <a href="#episodes" class="footer-link" onclick="navigateToPage(event, 'episodes')">Episodes</a>
+                        <a href="#support" class="footer-link">Support</a>
+                    </div>
+                    
+                    <div class="footer-contact">
+                        <h3 class="footer-heading">Contact</h3>
+                        <p class="footer-text">pkireri@gmail.com</p>
+                        <p class="footer-text">+1 (404) 717-5716</p>
+                        <p class="footer-text">Atlanta, GA</p>
+                    </div>
+                </div>
+                
+                <div class="footer-bottom">
+                    <p class="footer-copyright">© 2025 Pravin Ireri. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
     </div>
 
     <!-- EPISODE DETAIL PAGE -->
     <div id="page-episode-detail" class="page" style="display: none;">
         <section class="episode-hero">
             <div class="container">
-                <a href="#episodes" class="back-link">
-                    <i data-lucide="arrow-left" class="back-icon"></i>
+                <a href="#episodes" class="back-link" onclick="navigateToPage(event, 'episodes')">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="back-icon">
+                        <path d="m12 19-7-7 7-7"/>
+                        <path d="M19 12H5"/>
+                    </svg>
                     Back to Episodes
                 </a>
                 
@@ -266,7 +333,9 @@
                 <div class="support-links-grid" id="supportLinksGrid"></div>
                 
                 <div class="support-cta">
-                    <i data-lucide="heart" class="support-icon"></i>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="support-icon">
+                        <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
+                    </svg>
                     <h3 class="support-cta-title">Every Contribution Matters</h3>
                     <p class="support-cta-text" id="supportCtaText">
                         100% of donations go directly to supporting their community work
@@ -275,132 +344,41 @@
                 </div>
             </div>
         </section>
-        
-    </div>
 
-    <!-- MERCH PAGE -->
-    <div id="page-merch" class="page" style="display: none;">
-        <section class="page-header">
-            <div class="container-center">
-                <span class="badge badge-outline">Official Merch</span>
-                <h1 class="page-title">
-                    Support Through <span class="text-primary">Style</span>
-                </h1>
-                <p class="page-description">
-                    Every purchase directly supports our mission to amplify underrepresented voices. 
-                    Wear your values proudly.
-                </p>
-            </div>
-        </section>
-
-        <section class="impact-banner">
+        <footer class="footer">
             <div class="container">
-                <i data-lucide="heart" class="impact-icon"></i>
-                <p class="impact-text">
-                    100% of profits fund storytelling projects and support featured individuals
-                </p>
-            </div>
-        </section>
-
-        <section class="products-section">
-            <div class="container">
-                <div class="products-grid" id="productsGrid"></div>
-            </div>
-        </section>
-
-        <section class="impact-section">
-            <div class="container-narrow">
-                <h2 class="section-title">
-                    Your Purchase <span class="text-primary">Makes an Impact</span>
-                </h2>
-                <p class="impact-description">
-                    Every item you buy helps us create more episodes, support featured individuals, 
-                    and continue amplifying voices that deserve to be heard.
-                </p>
-                
-                <div class="impact-grid">
-                    <div class="impact-card">
-                        <div class="impact-icon-wrapper">
-                            <i data-lucide="heart" class="impact-card-icon"></i>
+                <div class="footer-grid">
+                    <div class="footer-brand">
+                        <div class="footer-logo">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="logo-icon">
+                                <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/>
+                            </svg>
+                            <span class="logo-text">Off-Record</span>
                         </div>
-                        <h3 class="impact-card-title">Direct Support</h3>
-                        <p class="impact-card-text">
-                            Profits go directly to our featured individuals
+                        <p class="footer-description">
+                            Amplifying the voices of the underrepresented, one story at a time.
                         </p>
                     </div>
                     
-                    <div class="impact-card">
-                        <div class="impact-icon-wrapper">
-                            <i data-lucide="shopping-cart" class="impact-card-icon"></i>
-                        </div>
-                        <h3 class="impact-card-title">Quality Products</h3>
-                        <p class="impact-card-text">
-                            Sustainably sourced, ethically made merchandise
-                        </p>
+                    <div class="footer-links">
+                        <h3 class="footer-heading">Quick Links</h3>
+                        <a href="#episodes" class="footer-link" onclick="navigateToPage(event, 'episodes')">Episodes</a>
+                        <a href="#support" class="footer-link">Support</a>
                     </div>
                     
-                    <div class="impact-card">
-                        <div class="impact-icon-wrapper">
-                            <i data-lucide="heart" class="impact-card-icon"></i>
-                        </div>
-                        <h3 class="impact-card-title">Community Building</h3>
-                        <p class="impact-card-text">
-                            Join a movement of supporters amplifying voices
-                        </p>
+                    <div class="footer-contact">
+                        <h3 class="footer-heading">Contact</h3>
+                        <p class="footer-text">pkireri@gmail.com</p>
+                        <p class="footer-text">+1 (404) 717-5716</p>
+                        <p class="footer-text">Atlanta, GA</p>
                     </div>
                 </div>
-            </div>
-        </section>  
-    </div>
-
-    <!-- SUPPORT PAGE -->
-    <div id="page-support" class="page" style="display: none;">
-        <section class="support-page-section">
-            <div class="container-narrow">
-                <span class="badge badge-outline">
-                    <i data-lucide="heart" class="badge-icon"></i>
-                    Support Our Work
-                </span>
                 
-                <h1 class="page-title">
-                    Help Us Amplify <span class="text-primary">Unheard Voices</span>
-                </h1>
-                
-                <p class="page-description">
-                    Your support enables us to continue producing episodes, supporting the individuals we feature, 
-                    and bringing untold stories to the world.
-                </p>
-                
-                <div class="support-options">
-                    <div class="support-option-card">
-                        <i data-lucide="dollar-sign" class="support-option-icon"></i>
-                        <h3 class="support-option-title">Make a Donation</h3>
-                        <p class="support-option-text">
-                            Direct financial support helps us produce more episodes and support featured individuals
-                        </p>
-                        <button class="btn-primary">Donate Now</button>
-                    </div>
-                    
-                    <div class="support-option-card">
-                        <i data-lucide="shopping-bag" class="support-option-icon"></i>
-                        <h3 class="support-option-title">Purchase Merch</h3>
-                        <p class="support-option-text">
-                            100% of merch profits go directly to supporting our mission and featured individuals
-                        </p>
-                        <a href="#merch" class="btn-outline">Shop Merch</a>
-                    </div>
-                    
-                    <div class="support-option-card">
-                        <i data-lucide="share-2" class="support-option-icon"></i>
-                        <h3 class="support-option-title">Share Stories</h3>
-                        <p class="support-option-text">
-                            Help amplify these voices by sharing episodes with your community
-                        </p>
-                        <button class="btn-outline">Share</button>
-                    </div>
+                <div class="footer-bottom">
+                    <p class="footer-copyright">© 2025 Pravin Ireri. All rights reserved.</p>
                 </div>
             </div>
-        </section>
+        </footer>
     </div>
 
     <script src="script.js"></script>
